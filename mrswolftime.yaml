@@ -2,53 +2,54 @@ title: What time is it Mrs Wolf?
 description: Time formats in useful languages and frameworks
 exampleDate: 1456763459
 
+languages:
+  javascript:
+    name: JavaScript
+  js-date-fns:
+    name: date-fns
+  php-function:
+    name: PHP date/time function
+  php-class:
+    name: PHP DateTime class
+  php-carbon:
+    name: PHP Carbon
+    docs: https://carbon.nesbot.com/docs/
+
 formats:
   year:
     heading: Year
     phpFormat: "Y"
     description: Four digits
     samples:
-      -
-        name: JavaScript
-        code: |
-          var date = new Date();
-          date.getFullYear();
-      -
-        name: PHP
-        code: |
-          date('Y');
-      -
-        name: PHP DateTime object
-        code: |
-          $date = new DateTime();
-          $date->format('Y');
-      -
-        name: PHP Carbon
-        code: |
-          $date = Carbon::now();
-          $date->year;
+      javascript: |
+        var date = new Date();
+        date.getFullYear();
+      js-date-fns: |
+        format(new Date('YYYY'));
+      php-function: |
+        date('Y');
+      php-class: |
+        $date = new DateTime();
+        $date->format('Y');
+      php-carbon: |
+        $date = Carbon::now();
+        $date->year;
 
   simplifiedExtendedIso8601:
     heading: Simplified extended ISO 8601
     phpFormat: Y-m-d\TG:i:s.v\Z
     description: Always UTC
     samples:
-      -
-        name: JavaScript
-        code: |
-          var date = new Date();
-          event.toISOString();
-      -
-        name: PHP
-        code: |
-          // Not accuratly attainable
-      -
-        name: PHP DateTime object
-        code: |
-          $date = new DateTime();
-          $date->format('Y-m-d\TG:i:s.v\Z');
-      -
-        name: PHP Carbon
-        code: |
-          $date = Carbon::now();
-          $date->format('Y-m-d\TG:i:s.v\Z');
+      javascript: |
+        var date = new Date();
+        event.toISOString();
+      js-date-fns: |
+        format(new Date());
+      php-function: |
+        // Not accuratly attainable
+      php-class: |
+        $date = new DateTime();
+        $date->format('Y-m-d\TG:i:s.v\Z');
+      php-carbon: |
+        $date = Carbon::now();
+        $date->format('Y-m-d\TG:i:s.v\Z');

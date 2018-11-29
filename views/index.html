@@ -54,12 +54,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for sample in format.samples %}
+                        {% for sampleLang, sampleCode in format.samples %}
                             <tr>
-                                <th>{{ sample.name }}</th>
+                                <th>{{ languages[sampleLang].name }}</th>
                                 <td>
                                     <code>
-                                        {{ sample.code|trim|nl2br }}
+                                        {{ sampleCode|trim|nl2br }}
                                     </code>
                                 </td>
                             </tr>
