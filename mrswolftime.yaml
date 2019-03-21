@@ -35,6 +35,19 @@ formats:
         $date = Carbon::now();
         $date->year;
 
+  fromTimestamp:
+    heading: From UNIX timestamp
+    phpFormat: "Y"
+    description: New object from a timestamp string or integer
+    samples:
+      javascript: |
+        // unixTimestamp
+        var date = new Date(unixTimestamp * 1000);
+      php-class: |
+        // $unixTimestamp
+        $date = new DateTime();
+        $date->setTimestamp($unixTimestamp);
+
   simplifiedExtendedIso8601:
     heading: Simplified extended ISO 8601
     phpFormat: Y-m-d\TG:i:s.v\Z
